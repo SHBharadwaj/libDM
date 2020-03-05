@@ -2,7 +2,7 @@ DM is a C++ library being developed for Data mining techniques.
 
 Build instructions:
 
-* clone or copy DM source 
+* git clone https://VenomCoder@bitbucket.org/VenomCoder/dm-a-data-mining-library.git
 * mkdir DM-build
 * mkdir DM-install
 * cd DM-build/
