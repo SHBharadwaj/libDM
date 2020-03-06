@@ -1,4 +1,5 @@
 #include "include/data/Dataset.h"
+#include "include/preprocess/Sampling.h"
 #include <iostream>
 #include <string>
 
@@ -18,7 +19,7 @@ int main(int argc, char *argv[]) {
 
   unsigned OptionSelected = 1;
   while (OptionSelected) {
-    cout << " Choose operation on your dataset \n";
+    cout << "\nChoose operation on your dataset \n";
     cout << " 1. Apply random sampling \n";
     cout << " 2. Print dimensions of my dataset \n";
     cout << " 3. Select 0 to exit \n\n";
@@ -26,9 +27,15 @@ int main(int argc, char *argv[]) {
     cin >> OptionSelected;
 
     switch (OptionSelected) {
-    case 1:
-      cout << "Yet to be handled" << endl;
+    case 1: {
+      unsigned sampleSize;
+      cout << "\n Input sample size \n";
+      cin >> sampleSize;
+      RandomSampler sampler(&currDataset, sampleSize);
+      auto dataSample = sampler.getDataSample();
+      dataSample.printDataset();
       break;
+    }
     case 2:
       currDataset.printDataShape();
       break;
