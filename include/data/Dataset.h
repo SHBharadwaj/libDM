@@ -31,6 +31,7 @@ public:
   void printDataShape();
 
   void printDataset();
+
 };
 } // namespace DM
 
