@@ -20,3 +20,12 @@ void Dataset::readDataset() {
 void Dataset::printDataShape() {
   cout << dataset.size() << "*" << dataset[0].size() << endl;
 }
+
+void Dataset::printDataset() {
+  for (auto row : dataset) {
+    for (auto column : row) {
+      cout << column << " ";
+    }
+    cout << endl;
+  }
+}

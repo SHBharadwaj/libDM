@@ -20,10 +20,18 @@ class Dataset {
 public:
   Dataset(string datasetLoc) : datasetLoc(datasetLoc) { readDataset(); }
 
+  Dataset(Data dataset) : dataset(dataset) {}
+
   // Returns data
   inline Data &getData() { return dataset; }
 
+  // Returns total number of rows in the dataset
+  inline unsigned getRowCount() { return dataset.size(); }
+
   void printDataShape();
+
+  void printDataset();
+
 };
 } // namespace DM
 

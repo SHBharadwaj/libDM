@@ -7,7 +7,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-SET( CMAKE_CXX_FLAGS " -std=c++11 -Wunused -Wall -Wno-null-conversion") 
+SET( CMAKE_CXX_FLAGS " -std=c++11 -g -Wunused -Wall -Wno-null-conversion") 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} include/)
 
