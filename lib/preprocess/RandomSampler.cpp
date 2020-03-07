@@ -5,16 +5,12 @@ using namespace DM;
 Dataset Sampler::getDataSample() { return *dataset; }
 
 Dataset RandomSampler::getDataSample() {
-  if (replaceItems) {
-    sampleWithoutReplacement();
-    return Dataset(sampledData);
-  } else {
-    sampleWithReplacement();
-    return Dataset(sampledData);
-  }
+  if (!replaceItems)
+    return sampleWithoutReplacement();
+  return sampleWithReplacement();
 }
 
-void RandomSampler::sampleWithoutReplacement() {
+Dataset RandomSampler::sampleWithoutReplacement() {
   unsigned count = 0;
   auto data = getCurrDataset()->getData();
   while (count < getSampleSize()) {
@@ -22,9 +18,10 @@ void RandomSampler::sampleWithoutReplacement() {
     sampledData.push_back(data[randomNumber]);
     count++;
   }
+  return Dataset(sampledData);
 }
 
-void RandomSampler::sampleWithReplacement() {
+Dataset RandomSampler::sampleWithReplacement() {
   unsigned count = 0;
   auto totalRows = getCurrDataset()->getRowCount();
   bool IsChoosen[totalRows] = {0};
@@ -37,4 +34,5 @@ void RandomSampler::sampleWithReplacement() {
       count++;
     }
   }
+  return Dataset(sampledData);
 }

@@ -30,9 +30,9 @@ public:
 
   Dataset getDataSample();
 
-  void sampleWithReplacement();
+  Dataset sampleWithReplacement();
 
-  void sampleWithoutReplacement();
+  Dataset sampleWithoutReplacement();
 };
 
 // TODO: Class for stratified sampler has to be added here.
