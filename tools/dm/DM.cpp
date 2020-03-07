@@ -88,41 +88,5 @@ int main(int argc, char **argv) {
     currDataset.printDataShape();
   }
 
-  // TODO: Add a commandline support to these operations !
-  // for eg: --apply-sampling n = 10
-  //         --print-shape
-
-  /*unsigned OptionSelected = 1;
-  while (OptionSelected) {
-    cout << "\nChoose operation on your dataset \n";
-    cout << " 1. Apply random sampling \n";
-    cout << " 2. Print dimensions of my dataset \n";
-    cout << " 3. Select 0 to exit \n\n";
-
-    cin >> OptionSelected;
-
-    switch (OptionSelected) {
-    case 1: {
-      unsigned sampleSize;
-      cout << "\n Input sample size \n";
-      cin >> sampleSize;
-      RandomSampler sampler(&currDataset, sampleSize);
-      auto dataSample = sampler.getDataSample();
-      dataSample.printDataShape();
-      break;
-    }
-    case 2:
-      currDataset.printDataShape();
-      break;
-    case 3:
-      OptionSelected = 0;
-      break;
-    default:
-      cout << "Choose a valid option " << endl;
-      break;
-    };
-  }*/
-
-  cout << "Thank you for using the program" << endl;
   return 0;
 }
